@@ -8,6 +8,9 @@ public class CCacheFactory {
         else if (policy == EPolicy.MRU) {
             return new CMRUCache(cache_size);
         }
+        else if (policy == EPolicy.RR) {
+            return new CRRCache(cache_size);
+        }
         else {
             throw new RuntimeException("Invalid policy");
         }
