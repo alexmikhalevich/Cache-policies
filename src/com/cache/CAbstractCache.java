@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public abstract class CAbstractCache implements ICache {
-    int _cache_size;
-    HashMap _map;
-    LinkedList _list;
+    protected int _cache_size;
+    protected HashMap _map;
+    protected LinkedList _list;
 
     public CAbstractCache(int cache_size) {
         _cache_size = cache_size;
