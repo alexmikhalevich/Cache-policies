@@ -11,7 +11,7 @@ public class CRRCache extends CAbstractCache {
     }
 
     @Override
-    public void put(Object key, Object val) {
+    public synchronized void put(Object key, Object val) {
         Object obj = _map.get(key);
         if (obj != null) {
             _map.put(key, val);

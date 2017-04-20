@@ -6,7 +6,7 @@ public class CMRUCache extends CAbstractCache {
     }
 
     @Override
-    public void put(Object key, Object val) {
+    public synchronized void put(Object key, Object val) {
         if (_list.size() == _cache_size) {
             prune();
         }
@@ -15,7 +15,7 @@ public class CMRUCache extends CAbstractCache {
     }
 
     @Override
-    public Object get(Object key) {
+    public synchronized Object get(Object key) {
         boolean res = _list.remove(key);
         if (res) {
             _list.addLast(key);
